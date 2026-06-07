@@ -1,0 +1,57 @@
+#[doc = "Register `DNSEQCTL4` reader"]
+pub type R = crate::R<Dnseqctl4Spec>;
+#[doc = "Register `DNSEQCTL4` writer"]
+pub type W = crate::W<Dnseqctl4Spec>;
+#[doc = "Field `DOFFSET` reader - desc DOFFSET"]
+pub type DoffsetR = crate::FieldReader<u32>;
+#[doc = "Field `DOFFSET` writer - desc DOFFSET"]
+pub type DoffsetW<'a, REG> = crate::FieldWriter<'a, REG, 20, u32>;
+#[doc = "Field `DNSCNT` reader - desc DNSCNT"]
+pub type DnscntR = crate::FieldReader<u16>;
+#[doc = "Field `DNSCNT` writer - desc DNSCNT"]
+pub type DnscntW<'a, REG> = crate::FieldWriter<'a, REG, 12, u16>;
+impl R {
+    #[doc = "Bits 0:19 - desc DOFFSET"]
+    #[inline(always)]
+    pub fn doffset(&self) -> DoffsetR {
+        DoffsetR::new(self.bits & 0x000f_ffff)
+    }
+    #[doc = "Bits 20:31 - desc DNSCNT"]
+    #[inline(always)]
+    pub fn dnscnt(&self) -> DnscntR {
+        DnscntR::new(((self.bits >> 20) & 0x0fff) as u16)
+    }
+}
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("DNSEQCTL4")
+            .field("doffset", &self.doffset())
+            .field("dnscnt", &self.dnscnt())
+            .finish()
+    }
+}
+impl W {
+    #[doc = "Bits 0:19 - desc DOFFSET"]
+    #[inline(always)]
+    pub fn doffset(&mut self) -> DoffsetW<'_, Dnseqctl4Spec> {
+        DoffsetW::new(self, 0)
+    }
+    #[doc = "Bits 20:31 - desc DNSCNT"]
+    #[inline(always)]
+    pub fn dnscnt(&mut self) -> DnscntW<'_, Dnseqctl4Spec> {
+        DnscntW::new(self, 20)
+    }
+}
+#[doc = "desc DNSEQCTL4\n\nYou can [`read`](crate::Reg::read) this register and get [`dnseqctl4::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dnseqctl4::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct Dnseqctl4Spec;
+impl crate::RegisterSpec for Dnseqctl4Spec {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [`dnseqctl4::R`](R) reader structure"]
+impl crate::Readable for Dnseqctl4Spec {}
+#[doc = "`write(|w| ..)` method takes [`dnseqctl4::W`](W) writer structure"]
+impl crate::Writable for Dnseqctl4Spec {
+    type Safety = crate::Unsafe;
+}
+#[doc = "`reset()` method sets DNSEQCTL4 to value 0"]
+impl crate::Resettable for Dnseqctl4Spec {}

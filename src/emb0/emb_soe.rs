@@ -1,0 +1,40 @@
+#[doc = "Register `EMB_SOE` reader"]
+pub type R = crate::R<EmbSoeSpec>;
+#[doc = "Register `EMB_SOE` writer"]
+pub type W = crate::W<EmbSoeSpec>;
+#[doc = "Field `SOE` reader - desc SOE"]
+pub type SoeR = crate::BitReader;
+#[doc = "Field `SOE` writer - desc SOE"]
+pub type SoeW<'a, REG> = crate::BitWriter<'a, REG>;
+impl R {
+    #[doc = "Bit 0 - desc SOE"]
+    #[inline(always)]
+    pub fn soe(&self) -> SoeR {
+        SoeR::new((self.bits & 1) != 0)
+    }
+}
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("EMB_SOE").field("soe", &self.soe()).finish()
+    }
+}
+impl W {
+    #[doc = "Bit 0 - desc SOE"]
+    #[inline(always)]
+    pub fn soe(&mut self) -> SoeW<'_, EmbSoeSpec> {
+        SoeW::new(self, 0)
+    }
+}
+#[doc = "desc EMB_SOE\n\nYou can [`read`](crate::Reg::read) this register and get [`emb_soe::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`emb_soe::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct EmbSoeSpec;
+impl crate::RegisterSpec for EmbSoeSpec {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [`emb_soe::R`](R) reader structure"]
+impl crate::Readable for EmbSoeSpec {}
+#[doc = "`write(|w| ..)` method takes [`emb_soe::W`](W) writer structure"]
+impl crate::Writable for EmbSoeSpec {
+    type Safety = crate::Unsafe;
+}
+#[doc = "`reset()` method sets EMB_SOE to value 0"]
+impl crate::Resettable for EmbSoeSpec {}

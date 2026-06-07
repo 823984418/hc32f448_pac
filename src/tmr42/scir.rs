@@ -1,0 +1,149 @@
+#[doc = "Register `SCIR` reader"]
+pub type R = crate::R<ScirSpec>;
+#[doc = "Register `SCIR` writer"]
+pub type W = crate::W<ScirSpec>;
+#[doc = "Field `ITEN0` reader - desc ITEN0"]
+pub type Iten0R = crate::BitReader;
+#[doc = "Field `ITEN0` writer - desc ITEN0"]
+pub type Iten0W<'a, REG> = crate::BitWriter<'a, REG>;
+#[doc = "Field `ITEN1` reader - desc ITEN1"]
+pub type Iten1R = crate::BitReader;
+#[doc = "Field `ITEN1` writer - desc ITEN1"]
+pub type Iten1W<'a, REG> = crate::BitWriter<'a, REG>;
+#[doc = "Field `ITEN2` reader - desc ITEN2"]
+pub type Iten2R = crate::BitReader;
+#[doc = "Field `ITEN2` writer - desc ITEN2"]
+pub type Iten2W<'a, REG> = crate::BitWriter<'a, REG>;
+#[doc = "Field `ITEN3` reader - desc ITEN3"]
+pub type Iten3R = crate::BitReader;
+#[doc = "Field `ITEN3` writer - desc ITEN3"]
+pub type Iten3W<'a, REG> = crate::BitWriter<'a, REG>;
+#[doc = "Field `ITEN4` reader - desc ITEN4"]
+pub type Iten4R = crate::BitReader;
+#[doc = "Field `ITEN4` writer - desc ITEN4"]
+pub type Iten4W<'a, REG> = crate::BitWriter<'a, REG>;
+#[doc = "Field `ITEN5` reader - desc ITEN5"]
+pub type Iten5R = crate::BitReader;
+#[doc = "Field `ITEN5` writer - desc ITEN5"]
+pub type Iten5W<'a, REG> = crate::BitWriter<'a, REG>;
+#[doc = "Field `ITEN6` reader - desc ITEN6"]
+pub type Iten6R = crate::BitReader;
+#[doc = "Field `ITEN6` writer - desc ITEN6"]
+pub type Iten6W<'a, REG> = crate::BitWriter<'a, REG>;
+#[doc = "Field `ITEN7` reader - desc ITEN7"]
+pub type Iten7R = crate::BitReader;
+#[doc = "Field `ITEN7` writer - desc ITEN7"]
+pub type Iten7W<'a, REG> = crate::BitWriter<'a, REG>;
+impl R {
+    #[doc = "Bit 0 - desc ITEN0"]
+    #[inline(always)]
+    pub fn iten0(&self) -> Iten0R {
+        Iten0R::new((self.bits & 1) != 0)
+    }
+    #[doc = "Bit 1 - desc ITEN1"]
+    #[inline(always)]
+    pub fn iten1(&self) -> Iten1R {
+        Iten1R::new(((self.bits >> 1) & 1) != 0)
+    }
+    #[doc = "Bit 2 - desc ITEN2"]
+    #[inline(always)]
+    pub fn iten2(&self) -> Iten2R {
+        Iten2R::new(((self.bits >> 2) & 1) != 0)
+    }
+    #[doc = "Bit 3 - desc ITEN3"]
+    #[inline(always)]
+    pub fn iten3(&self) -> Iten3R {
+        Iten3R::new(((self.bits >> 3) & 1) != 0)
+    }
+    #[doc = "Bit 4 - desc ITEN4"]
+    #[inline(always)]
+    pub fn iten4(&self) -> Iten4R {
+        Iten4R::new(((self.bits >> 4) & 1) != 0)
+    }
+    #[doc = "Bit 5 - desc ITEN5"]
+    #[inline(always)]
+    pub fn iten5(&self) -> Iten5R {
+        Iten5R::new(((self.bits >> 5) & 1) != 0)
+    }
+    #[doc = "Bit 6 - desc ITEN6"]
+    #[inline(always)]
+    pub fn iten6(&self) -> Iten6R {
+        Iten6R::new(((self.bits >> 6) & 1) != 0)
+    }
+    #[doc = "Bit 7 - desc ITEN7"]
+    #[inline(always)]
+    pub fn iten7(&self) -> Iten7R {
+        Iten7R::new(((self.bits >> 7) & 1) != 0)
+    }
+}
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SCIR")
+            .field("iten0", &self.iten0())
+            .field("iten1", &self.iten1())
+            .field("iten2", &self.iten2())
+            .field("iten3", &self.iten3())
+            .field("iten4", &self.iten4())
+            .field("iten5", &self.iten5())
+            .field("iten6", &self.iten6())
+            .field("iten7", &self.iten7())
+            .finish()
+    }
+}
+impl W {
+    #[doc = "Bit 0 - desc ITEN0"]
+    #[inline(always)]
+    pub fn iten0(&mut self) -> Iten0W<'_, ScirSpec> {
+        Iten0W::new(self, 0)
+    }
+    #[doc = "Bit 1 - desc ITEN1"]
+    #[inline(always)]
+    pub fn iten1(&mut self) -> Iten1W<'_, ScirSpec> {
+        Iten1W::new(self, 1)
+    }
+    #[doc = "Bit 2 - desc ITEN2"]
+    #[inline(always)]
+    pub fn iten2(&mut self) -> Iten2W<'_, ScirSpec> {
+        Iten2W::new(self, 2)
+    }
+    #[doc = "Bit 3 - desc ITEN3"]
+    #[inline(always)]
+    pub fn iten3(&mut self) -> Iten3W<'_, ScirSpec> {
+        Iten3W::new(self, 3)
+    }
+    #[doc = "Bit 4 - desc ITEN4"]
+    #[inline(always)]
+    pub fn iten4(&mut self) -> Iten4W<'_, ScirSpec> {
+        Iten4W::new(self, 4)
+    }
+    #[doc = "Bit 5 - desc ITEN5"]
+    #[inline(always)]
+    pub fn iten5(&mut self) -> Iten5W<'_, ScirSpec> {
+        Iten5W::new(self, 5)
+    }
+    #[doc = "Bit 6 - desc ITEN6"]
+    #[inline(always)]
+    pub fn iten6(&mut self) -> Iten6W<'_, ScirSpec> {
+        Iten6W::new(self, 6)
+    }
+    #[doc = "Bit 7 - desc ITEN7"]
+    #[inline(always)]
+    pub fn iten7(&mut self) -> Iten7W<'_, ScirSpec> {
+        Iten7W::new(self, 7)
+    }
+}
+#[doc = "desc SCIR\n\nYou can [`read`](crate::Reg::read) this register and get [`scir::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`scir::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct ScirSpec;
+impl crate::RegisterSpec for ScirSpec {
+    type Ux = u16;
+}
+#[doc = "`read()` method returns [`scir::R`](R) reader structure"]
+impl crate::Readable for ScirSpec {}
+#[doc = "`write(|w| ..)` method takes [`scir::W`](W) writer structure"]
+impl crate::Writable for ScirSpec {
+    type Safety = crate::Unsafe;
+}
+#[doc = "`reset()` method sets SCIR to value 0xff00"]
+impl crate::Resettable for ScirSpec {
+    const RESET_VALUE: u16 = 0xff00;
+}

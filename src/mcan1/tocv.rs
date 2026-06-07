@@ -1,0 +1,42 @@
+#[doc = "Register `TOCV` reader"]
+pub type R = crate::R<TocvSpec>;
+#[doc = "Register `TOCV` writer"]
+pub type W = crate::W<TocvSpec>;
+#[doc = "Field `TOC` reader - desc TOC"]
+pub type TocR = crate::FieldReader<u16>;
+#[doc = "Field `TOC` writer - desc TOC"]
+pub type TocW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
+impl R {
+    #[doc = "Bits 0:15 - desc TOC"]
+    #[inline(always)]
+    pub fn toc(&self) -> TocR {
+        TocR::new((self.bits & 0xffff) as u16)
+    }
+}
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("TOCV").field("toc", &self.toc()).finish()
+    }
+}
+impl W {
+    #[doc = "Bits 0:15 - desc TOC"]
+    #[inline(always)]
+    pub fn toc(&mut self) -> TocW<'_, TocvSpec> {
+        TocW::new(self, 0)
+    }
+}
+#[doc = "desc TOCV\n\nYou can [`read`](crate::Reg::read) this register and get [`tocv::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`tocv::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct TocvSpec;
+impl crate::RegisterSpec for TocvSpec {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [`tocv::R`](R) reader structure"]
+impl crate::Readable for TocvSpec {}
+#[doc = "`write(|w| ..)` method takes [`tocv::W`](W) writer structure"]
+impl crate::Writable for TocvSpec {
+    type Safety = crate::Unsafe;
+}
+#[doc = "`reset()` method sets TOCV to value 0xffff"]
+impl crate::Resettable for TocvSpec {
+    const RESET_VALUE: u32 = 0xffff;
+}
