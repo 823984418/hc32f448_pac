@@ -114,22 +114,274 @@ where
         self.variant(Ms::SeqaBufSeqbSingleshot)
     }
 }
+#[doc = "desc ACCSEL\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+#[repr(u8)]
+pub enum Accsel {
+    #[doc = "0: `0`"]
+    Resolution12bit = 0,
+    #[doc = "1: `1`"]
+    Resolution10bit = 1,
+    #[doc = "2: `10`"]
+    Resolution8bit = 2,
+}
+impl From<Accsel> for u8 {
+    #[inline(always)]
+    fn from(variant: Accsel) -> Self {
+        variant as _
+    }
+}
+impl crate::FieldSpec for Accsel {
+    type Ux = u8;
+}
+impl crate::IsEnum for Accsel {}
 #[doc = "Field `ACCSEL` reader - desc ACCSEL"]
-pub type AccselR = crate::FieldReader;
+pub type AccselR = crate::FieldReader<Accsel>;
+impl AccselR {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub const fn variant(&self) -> Option<Accsel> {
+        match self.bits {
+            0 => Some(Accsel::Resolution12bit),
+            1 => Some(Accsel::Resolution10bit),
+            2 => Some(Accsel::Resolution8bit),
+            _ => None,
+        }
+    }
+    #[doc = "`0`"]
+    #[inline(always)]
+    pub fn is_resolution_12bit(&self) -> bool {
+        *self == Accsel::Resolution12bit
+    }
+    #[doc = "`1`"]
+    #[inline(always)]
+    pub fn is_resolution_10bit(&self) -> bool {
+        *self == Accsel::Resolution10bit
+    }
+    #[doc = "`10`"]
+    #[inline(always)]
+    pub fn is_resolution_8bit(&self) -> bool {
+        *self == Accsel::Resolution8bit
+    }
+}
 #[doc = "Field `ACCSEL` writer - desc ACCSEL"]
-pub type AccselW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
+pub type AccselW<'a, REG> = crate::FieldWriter<'a, REG, 2, Accsel>;
+impl<'a, REG> AccselW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
+    #[doc = "`0`"]
+    #[inline(always)]
+    pub fn resolution_12bit(self) -> &'a mut crate::W<REG> {
+        self.variant(Accsel::Resolution12bit)
+    }
+    #[doc = "`1`"]
+    #[inline(always)]
+    pub fn resolution_10bit(self) -> &'a mut crate::W<REG> {
+        self.variant(Accsel::Resolution10bit)
+    }
+    #[doc = "`10`"]
+    #[inline(always)]
+    pub fn resolution_8bit(self) -> &'a mut crate::W<REG> {
+        self.variant(Accsel::Resolution8bit)
+    }
+}
 #[doc = "Field `CLREN` reader - desc CLREN"]
 pub type ClrenR = crate::BitReader;
 #[doc = "Field `CLREN` writer - desc CLREN"]
 pub type ClrenW<'a, REG> = crate::BitWriter<'a, REG>;
+#[doc = "desc DFMT\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Dfmt {
+    #[doc = "0: `0`"]
+    DataalignRight = 0,
+    #[doc = "1: `1`"]
+    DataalignLeft = 1,
+}
+impl From<Dfmt> for bool {
+    #[inline(always)]
+    fn from(variant: Dfmt) -> Self {
+        variant as u8 != 0
+    }
+}
 #[doc = "Field `DFMT` reader - desc DFMT"]
-pub type DfmtR = crate::BitReader;
+pub type DfmtR = crate::BitReader<Dfmt>;
+impl DfmtR {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub const fn variant(&self) -> Dfmt {
+        match self.bits {
+            false => Dfmt::DataalignRight,
+            true => Dfmt::DataalignLeft,
+        }
+    }
+    #[doc = "`0`"]
+    #[inline(always)]
+    pub fn is_dataalign_right(&self) -> bool {
+        *self == Dfmt::DataalignRight
+    }
+    #[doc = "`1`"]
+    #[inline(always)]
+    pub fn is_dataalign_left(&self) -> bool {
+        *self == Dfmt::DataalignLeft
+    }
+}
 #[doc = "Field `DFMT` writer - desc DFMT"]
-pub type DfmtW<'a, REG> = crate::BitWriter<'a, REG>;
+pub type DfmtW<'a, REG> = crate::BitWriter<'a, REG, Dfmt>;
+impl<'a, REG> DfmtW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "`0`"]
+    #[inline(always)]
+    pub fn dataalign_right(self) -> &'a mut crate::W<REG> {
+        self.variant(Dfmt::DataalignRight)
+    }
+    #[doc = "`1`"]
+    #[inline(always)]
+    pub fn dataalign_left(self) -> &'a mut crate::W<REG> {
+        self.variant(Dfmt::DataalignLeft)
+    }
+}
+#[doc = "desc AVCNT\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+#[repr(u8)]
+pub enum Avcnt {
+    #[doc = "0: `0`"]
+    AvgCnt2 = 0,
+    #[doc = "1: `1`"]
+    AvgCnt4 = 1,
+    #[doc = "1: `1`"]
+    AvgCnt8 = 1,
+    #[doc = "1: `1`"]
+    AvgCnt16 = 1,
+    #[doc = "1: `1`"]
+    AvgCnt32 = 1,
+    #[doc = "1: `1`"]
+    AvgCnt64 = 1,
+    #[doc = "1: `1`"]
+    AvgCnt128 = 1,
+    #[doc = "1: `1`"]
+    AvgCnt256 = 1,
+}
+impl From<Avcnt> for u8 {
+    #[inline(always)]
+    fn from(variant: Avcnt) -> Self {
+        variant as _
+    }
+}
+impl crate::FieldSpec for Avcnt {
+    type Ux = u8;
+}
+impl crate::IsEnum for Avcnt {}
 #[doc = "Field `AVCNT` reader - desc AVCNT"]
-pub type AvcntR = crate::FieldReader;
+pub type AvcntR = crate::FieldReader<Avcnt>;
+impl AvcntR {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub const fn variant(&self) -> Avcnt {
+        match self.bits {
+            0 => Avcnt::AvgCnt2,
+            1 => Avcnt::AvgCnt4,
+            1 => Avcnt::AvgCnt8,
+            1 => Avcnt::AvgCnt16,
+            1 => Avcnt::AvgCnt32,
+            1 => Avcnt::AvgCnt64,
+            1 => Avcnt::AvgCnt128,
+            1 => Avcnt::AvgCnt256,
+            _ => unreachable!(),
+        }
+    }
+    #[doc = "`0`"]
+    #[inline(always)]
+    pub fn is_avg_cnt2(&self) -> bool {
+        *self == Avcnt::AvgCnt2
+    }
+    #[doc = "`1`"]
+    #[inline(always)]
+    pub fn is_avg_cnt4(&self) -> bool {
+        *self == Avcnt::AvgCnt4
+    }
+    #[doc = "`1`"]
+    #[inline(always)]
+    pub fn is_avg_cnt8(&self) -> bool {
+        *self == Avcnt::AvgCnt8
+    }
+    #[doc = "`1`"]
+    #[inline(always)]
+    pub fn is_avg_cnt16(&self) -> bool {
+        *self == Avcnt::AvgCnt16
+    }
+    #[doc = "`1`"]
+    #[inline(always)]
+    pub fn is_avg_cnt32(&self) -> bool {
+        *self == Avcnt::AvgCnt32
+    }
+    #[doc = "`1`"]
+    #[inline(always)]
+    pub fn is_avg_cnt64(&self) -> bool {
+        *self == Avcnt::AvgCnt64
+    }
+    #[doc = "`1`"]
+    #[inline(always)]
+    pub fn is_avg_cnt128(&self) -> bool {
+        *self == Avcnt::AvgCnt128
+    }
+    #[doc = "`1`"]
+    #[inline(always)]
+    pub fn is_avg_cnt256(&self) -> bool {
+        *self == Avcnt::AvgCnt256
+    }
+}
 #[doc = "Field `AVCNT` writer - desc AVCNT"]
-pub type AvcntW<'a, REG> = crate::FieldWriter<'a, REG, 3>;
+pub type AvcntW<'a, REG> = crate::FieldWriter<'a, REG, 3, Avcnt, crate::Safe>;
+impl<'a, REG> AvcntW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
+    #[doc = "`0`"]
+    #[inline(always)]
+    pub fn avg_cnt2(self) -> &'a mut crate::W<REG> {
+        self.variant(Avcnt::AvgCnt2)
+    }
+    #[doc = "`1`"]
+    #[inline(always)]
+    pub fn avg_cnt4(self) -> &'a mut crate::W<REG> {
+        self.variant(Avcnt::AvgCnt4)
+    }
+    #[doc = "`1`"]
+    #[inline(always)]
+    pub fn avg_cnt8(self) -> &'a mut crate::W<REG> {
+        self.variant(Avcnt::AvgCnt8)
+    }
+    #[doc = "`1`"]
+    #[inline(always)]
+    pub fn avg_cnt16(self) -> &'a mut crate::W<REG> {
+        self.variant(Avcnt::AvgCnt16)
+    }
+    #[doc = "`1`"]
+    #[inline(always)]
+    pub fn avg_cnt32(self) -> &'a mut crate::W<REG> {
+        self.variant(Avcnt::AvgCnt32)
+    }
+    #[doc = "`1`"]
+    #[inline(always)]
+    pub fn avg_cnt64(self) -> &'a mut crate::W<REG> {
+        self.variant(Avcnt::AvgCnt64)
+    }
+    #[doc = "`1`"]
+    #[inline(always)]
+    pub fn avg_cnt128(self) -> &'a mut crate::W<REG> {
+        self.variant(Avcnt::AvgCnt128)
+    }
+    #[doc = "`1`"]
+    #[inline(always)]
+    pub fn avg_cnt256(self) -> &'a mut crate::W<REG> {
+        self.variant(Avcnt::AvgCnt256)
+    }
+}
 impl R {
     #[doc = "Bits 0:2 - desc MS"]
     #[inline(always)]

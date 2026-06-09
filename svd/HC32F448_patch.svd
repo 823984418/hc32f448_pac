@@ -98,6 +98,20 @@
                             <msb>5</msb>
                             <lsb>4</lsb>
                             <access>read-write</access>
+                            <enumeratedValues>
+                                <enumeratedValue>
+                                    <name>RESOLUTION_12BIT</name>
+                                    <value>0</value>
+                                </enumeratedValue>
+                                <enumeratedValue>
+                                    <name>RESOLUTION_10BIT</name>
+                                    <value>1</value>
+                                </enumeratedValue>
+                                <enumeratedValue>
+                                    <name>RESOLUTION_8BIT</name>
+                                    <value>2</value>
+                                </enumeratedValue>
+                            </enumeratedValues>
                         </field>
                         <field>
                             <name>CLREN</name>
@@ -112,6 +126,16 @@
                             <msb>7</msb>
                             <lsb>7</lsb>
                             <access>read-write</access>
+                            <enumeratedValues>
+                                <enumeratedValue>
+                                    <name>DATAALIGN_RIGHT</name>
+                                    <value>0</value>
+                                </enumeratedValue>
+                                <enumeratedValue>
+                                    <name>DATAALIGN_LEFT</name>
+                                    <value>1</value>
+                                </enumeratedValue>
+                            </enumeratedValues>
                         </field>
                         <field>
                             <name>AVCNT</name>
@@ -119,6 +143,40 @@
                             <msb>10</msb>
                             <lsb>8</lsb>
                             <access>read-write</access>
+                            <enumeratedValues>
+                                <enumeratedValue>
+                                    <name>AVG_CNT2</name>
+                                    <value>0</value>
+                                </enumeratedValue>
+                                <enumeratedValue>
+                                    <name>AVG_CNT4</name>
+                                    <value>1</value>
+                                </enumeratedValue>
+                                <enumeratedValue>
+                                    <name>AVG_CNT8</name>
+                                    <value>1</value>
+                                </enumeratedValue>
+                                <enumeratedValue>
+                                    <name>AVG_CNT16</name>
+                                    <value>1</value>
+                                </enumeratedValue>
+                                <enumeratedValue>
+                                    <name>AVG_CNT32</name>
+                                    <value>1</value>
+                                </enumeratedValue>
+                                <enumeratedValue>
+                                    <name>AVG_CNT64</name>
+                                    <value>1</value>
+                                </enumeratedValue>
+                                <enumeratedValue>
+                                    <name>AVG_CNT128</name>
+                                    <value>1</value>
+                                </enumeratedValue>
+                                <enumeratedValue>
+                                    <name>AVG_CNT256</name>
+                                    <value>1</value>
+                                </enumeratedValue>
+                            </enumeratedValues>
                         </field>
                     </fields>
                 </register>
