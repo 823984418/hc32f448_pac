@@ -2,10 +2,118 @@
 pub type R = crate::R<Cr0Spec>;
 #[doc = "Register `CR0` writer"]
 pub type W = crate::W<Cr0Spec>;
+#[doc = "desc MS\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+#[repr(u8)]
+pub enum Ms {
+    #[doc = "0: `0`"]
+    SeqaSingleshot = 0,
+    #[doc = "1: `1`"]
+    SeqaCont = 1,
+    #[doc = "2: `10`"]
+    SeqaSeqbSingleshot = 2,
+    #[doc = "3: `11`"]
+    SeqaContSeqbSingleshot = 3,
+    #[doc = "4: `100`"]
+    SeqaBuf = 4,
+    #[doc = "6: `110`"]
+    SeqaBufSeqbSingleshot = 6,
+}
+impl From<Ms> for u8 {
+    #[inline(always)]
+    fn from(variant: Ms) -> Self {
+        variant as _
+    }
+}
+impl crate::FieldSpec for Ms {
+    type Ux = u8;
+}
+impl crate::IsEnum for Ms {}
 #[doc = "Field `MS` reader - desc MS"]
-pub type MsR = crate::FieldReader;
+pub type MsR = crate::FieldReader<Ms>;
+impl MsR {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub const fn variant(&self) -> Option<Ms> {
+        match self.bits {
+            0 => Some(Ms::SeqaSingleshot),
+            1 => Some(Ms::SeqaCont),
+            2 => Some(Ms::SeqaSeqbSingleshot),
+            3 => Some(Ms::SeqaContSeqbSingleshot),
+            4 => Some(Ms::SeqaBuf),
+            6 => Some(Ms::SeqaBufSeqbSingleshot),
+            _ => None,
+        }
+    }
+    #[doc = "`0`"]
+    #[inline(always)]
+    pub fn is_seqa_singleshot(&self) -> bool {
+        *self == Ms::SeqaSingleshot
+    }
+    #[doc = "`1`"]
+    #[inline(always)]
+    pub fn is_seqa_cont(&self) -> bool {
+        *self == Ms::SeqaCont
+    }
+    #[doc = "`10`"]
+    #[inline(always)]
+    pub fn is_seqa_seqb_singleshot(&self) -> bool {
+        *self == Ms::SeqaSeqbSingleshot
+    }
+    #[doc = "`11`"]
+    #[inline(always)]
+    pub fn is_seqa_cont_seqb_singleshot(&self) -> bool {
+        *self == Ms::SeqaContSeqbSingleshot
+    }
+    #[doc = "`100`"]
+    #[inline(always)]
+    pub fn is_seqa_buf(&self) -> bool {
+        *self == Ms::SeqaBuf
+    }
+    #[doc = "`110`"]
+    #[inline(always)]
+    pub fn is_seqa_buf_seqb_singleshot(&self) -> bool {
+        *self == Ms::SeqaBufSeqbSingleshot
+    }
+}
 #[doc = "Field `MS` writer - desc MS"]
-pub type MsW<'a, REG> = crate::FieldWriter<'a, REG, 3>;
+pub type MsW<'a, REG> = crate::FieldWriter<'a, REG, 3, Ms>;
+impl<'a, REG> MsW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
+    #[doc = "`0`"]
+    #[inline(always)]
+    pub fn seqa_singleshot(self) -> &'a mut crate::W<REG> {
+        self.variant(Ms::SeqaSingleshot)
+    }
+    #[doc = "`1`"]
+    #[inline(always)]
+    pub fn seqa_cont(self) -> &'a mut crate::W<REG> {
+        self.variant(Ms::SeqaCont)
+    }
+    #[doc = "`10`"]
+    #[inline(always)]
+    pub fn seqa_seqb_singleshot(self) -> &'a mut crate::W<REG> {
+        self.variant(Ms::SeqaSeqbSingleshot)
+    }
+    #[doc = "`11`"]
+    #[inline(always)]
+    pub fn seqa_cont_seqb_singleshot(self) -> &'a mut crate::W<REG> {
+        self.variant(Ms::SeqaContSeqbSingleshot)
+    }
+    #[doc = "`100`"]
+    #[inline(always)]
+    pub fn seqa_buf(self) -> &'a mut crate::W<REG> {
+        self.variant(Ms::SeqaBuf)
+    }
+    #[doc = "`110`"]
+    #[inline(always)]
+    pub fn seqa_buf_seqb_singleshot(self) -> &'a mut crate::W<REG> {
+        self.variant(Ms::SeqaBufSeqbSingleshot)
+    }
+}
 #[doc = "Field `ACCSEL` reader - desc ACCSEL"]
 pub type AccselR = crate::FieldReader;
 #[doc = "Field `ACCSEL` writer - desc ACCSEL"]

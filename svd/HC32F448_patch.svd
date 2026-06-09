@@ -65,6 +65,32 @@
                             <msb>2</msb>
                             <lsb>0</lsb>
                             <access>read-write</access>
+                            <enumeratedValues>
+                                <enumeratedValue>
+                                    <name>SEQA_SINGLESHOT</name>
+                                    <value>0</value>
+                                </enumeratedValue>
+                                <enumeratedValue>
+                                    <name>SEQA_CONT</name>
+                                    <value>1</value>
+                                </enumeratedValue>
+                                <enumeratedValue>
+                                    <name>SEQA_SEQB_SINGLESHOT</name>
+                                    <value>2</value>
+                                </enumeratedValue>
+                                <enumeratedValue>
+                                    <name>SEQA_CONT_SEQB_SINGLESHOT</name>
+                                    <value>3</value>
+                                </enumeratedValue>
+                                <enumeratedValue>
+                                    <name>SEQA_BUF</name>
+                                    <value>4</value>
+                                </enumeratedValue>
+                                <enumeratedValue>
+                                    <name>SEQA_BUF_SEQB_SINGLESHOT</name>
+                                    <value>6</value>
+                                </enumeratedValue>
+                            </enumeratedValues>
                         </field>
                         <field>
                             <name>ACCSEL</name>

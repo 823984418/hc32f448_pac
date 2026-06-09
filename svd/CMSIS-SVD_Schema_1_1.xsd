@@ -315,8 +315,8 @@
          by specifying the least significant and the most significant bit position -->
     <xs:group name="bitRangeLsbMsbStyle">
         <xs:sequence>
-            <xs:element name="lsb" type="scaledNonNegativeInteger"/>
             <xs:element name="msb" type="scaledNonNegativeInteger"/>
+            <xs:element name="lsb" type="scaledNonNegativeInteger"/>
         </xs:sequence>
     </xs:group>
     <!-- bitRangeOffsetWidthStyle specifies the bit position of a field within a register
@@ -565,9 +565,6 @@
             <xs:element name="version" type="stringType" minOccurs="0"/>
             <!-- description provides a high level functional description of the peripheral -->
             <xs:element name="description" type="stringType" minOccurs="0"/>
-            <!-- V1.1: alternatePeripheral specifies an alternative description for an address range that is
-                 already fully by a peripheral described. In this case the peripheral name must be unique within the device description -->
-            <xs:element name="alternatePeripheral" type="dimableIdentifierType" minOccurs="0"/>
             <!-- groupName assigns this peripheral to a group of peripherals. This is only used bye the System View -->
             <xs:element name="groupName" type="xs:Name" minOccurs="0"/>
             <!-- prependToName specifies a prefix that is placed in front of each register name of this peripheral.
@@ -585,6 +582,9 @@
             <!-- baseAddress specifies the absolute base address of a peripheral. For derived peripherals it is mandatory
                                to specify a baseAddress. -->
             <xs:element name="baseAddress" type="scaledNonNegativeInteger"/>
+            <!-- V1.1: alternatePeripheral specifies an alternative description for an address range that is
+                 already fully by a peripheral described. In this case the peripheral name must be unique within the device description -->
+            <xs:element name="alternatePeripheral" type="dimableIdentifierType" minOccurs="0"/>
             <!-- registerPropertiesGroup elements specify the default values for register size, access permission and
                                reset value. These default values are inherited to all registers contained in this peripheral -->
             <xs:group ref="registerPropertiesGroup" minOccurs="0"/>
