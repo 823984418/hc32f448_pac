@@ -154,27 +154,27 @@
                                 </enumeratedValue>
                                 <enumeratedValue>
                                     <name>AVG_CNT8</name>
-                                    <value>1</value>
+                                    <value>2</value>
                                 </enumeratedValue>
                                 <enumeratedValue>
                                     <name>AVG_CNT16</name>
-                                    <value>1</value>
+                                    <value>3</value>
                                 </enumeratedValue>
                                 <enumeratedValue>
                                     <name>AVG_CNT32</name>
-                                    <value>1</value>
+                                    <value>4</value>
                                 </enumeratedValue>
                                 <enumeratedValue>
                                     <name>AVG_CNT64</name>
-                                    <value>1</value>
+                                    <value>5</value>
                                 </enumeratedValue>
                                 <enumeratedValue>
                                     <name>AVG_CNT128</name>
-                                    <value>1</value>
+                                    <value>6</value>
                                 </enumeratedValue>
                                 <enumeratedValue>
                                     <name>AVG_CNT256</name>
-                                    <value>1</value>
+                                    <value>7</value>
                                 </enumeratedValue>
                             </enumeratedValues>
                         </field>

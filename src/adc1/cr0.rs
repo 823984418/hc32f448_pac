@@ -252,18 +252,18 @@ pub enum Avcnt {
     AvgCnt2 = 0,
     #[doc = "1: `1`"]
     AvgCnt4 = 1,
-    #[doc = "1: `1`"]
-    AvgCnt8 = 1,
-    #[doc = "1: `1`"]
-    AvgCnt16 = 1,
-    #[doc = "1: `1`"]
-    AvgCnt32 = 1,
-    #[doc = "1: `1`"]
-    AvgCnt64 = 1,
-    #[doc = "1: `1`"]
-    AvgCnt128 = 1,
-    #[doc = "1: `1`"]
-    AvgCnt256 = 1,
+    #[doc = "2: `10`"]
+    AvgCnt8 = 2,
+    #[doc = "3: `11`"]
+    AvgCnt16 = 3,
+    #[doc = "4: `100`"]
+    AvgCnt32 = 4,
+    #[doc = "5: `101`"]
+    AvgCnt64 = 5,
+    #[doc = "6: `110`"]
+    AvgCnt128 = 6,
+    #[doc = "7: `111`"]
+    AvgCnt256 = 7,
 }
 impl From<Avcnt> for u8 {
     #[inline(always)]
@@ -284,12 +284,12 @@ impl AvcntR {
         match self.bits {
             0 => Avcnt::AvgCnt2,
             1 => Avcnt::AvgCnt4,
-            1 => Avcnt::AvgCnt8,
-            1 => Avcnt::AvgCnt16,
-            1 => Avcnt::AvgCnt32,
-            1 => Avcnt::AvgCnt64,
-            1 => Avcnt::AvgCnt128,
-            1 => Avcnt::AvgCnt256,
+            2 => Avcnt::AvgCnt8,
+            3 => Avcnt::AvgCnt16,
+            4 => Avcnt::AvgCnt32,
+            5 => Avcnt::AvgCnt64,
+            6 => Avcnt::AvgCnt128,
+            7 => Avcnt::AvgCnt256,
             _ => unreachable!(),
         }
     }
@@ -303,32 +303,32 @@ impl AvcntR {
     pub fn is_avg_cnt4(&self) -> bool {
         *self == Avcnt::AvgCnt4
     }
-    #[doc = "`1`"]
+    #[doc = "`10`"]
     #[inline(always)]
     pub fn is_avg_cnt8(&self) -> bool {
         *self == Avcnt::AvgCnt8
     }
-    #[doc = "`1`"]
+    #[doc = "`11`"]
     #[inline(always)]
     pub fn is_avg_cnt16(&self) -> bool {
         *self == Avcnt::AvgCnt16
     }
-    #[doc = "`1`"]
+    #[doc = "`100`"]
     #[inline(always)]
     pub fn is_avg_cnt32(&self) -> bool {
         *self == Avcnt::AvgCnt32
     }
-    #[doc = "`1`"]
+    #[doc = "`101`"]
     #[inline(always)]
     pub fn is_avg_cnt64(&self) -> bool {
         *self == Avcnt::AvgCnt64
     }
-    #[doc = "`1`"]
+    #[doc = "`110`"]
     #[inline(always)]
     pub fn is_avg_cnt128(&self) -> bool {
         *self == Avcnt::AvgCnt128
     }
-    #[doc = "`1`"]
+    #[doc = "`111`"]
     #[inline(always)]
     pub fn is_avg_cnt256(&self) -> bool {
         *self == Avcnt::AvgCnt256
@@ -351,32 +351,32 @@ where
     pub fn avg_cnt4(self) -> &'a mut crate::W<REG> {
         self.variant(Avcnt::AvgCnt4)
     }
-    #[doc = "`1`"]
+    #[doc = "`10`"]
     #[inline(always)]
     pub fn avg_cnt8(self) -> &'a mut crate::W<REG> {
         self.variant(Avcnt::AvgCnt8)
     }
-    #[doc = "`1`"]
+    #[doc = "`11`"]
     #[inline(always)]
     pub fn avg_cnt16(self) -> &'a mut crate::W<REG> {
         self.variant(Avcnt::AvgCnt16)
     }
-    #[doc = "`1`"]
+    #[doc = "`100`"]
     #[inline(always)]
     pub fn avg_cnt32(self) -> &'a mut crate::W<REG> {
         self.variant(Avcnt::AvgCnt32)
     }
-    #[doc = "`1`"]
+    #[doc = "`101`"]
     #[inline(always)]
     pub fn avg_cnt64(self) -> &'a mut crate::W<REG> {
         self.variant(Avcnt::AvgCnt64)
     }
-    #[doc = "`1`"]
+    #[doc = "`110`"]
     #[inline(always)]
     pub fn avg_cnt128(self) -> &'a mut crate::W<REG> {
         self.variant(Avcnt::AvgCnt128)
     }
-    #[doc = "`1`"]
+    #[doc = "`111`"]
     #[inline(always)]
     pub fn avg_cnt256(self) -> &'a mut crate::W<REG> {
         self.variant(Avcnt::AvgCnt256)
